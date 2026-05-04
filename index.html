@@ -512,7 +512,7 @@
         },
         netlify_normal: {
             label: "Netlify Domain",
-            template: "vless://TIGNAL@{ADDRESS}:443?encryption=none&security=tls&sni={SNI}&alpn=h2%2Chttp%2F1.1&insecure=1&allowInsecure=1&type=xhttp&host={HOST}&path=%2Flogin&mode=auto#{NAME}",
+            template: "vless://0c1e64bd-9730-4c9e-95bc-1b95e3a4d4bd@{ADDRESS}:443?encryption=none&security=tls&sni={SNI}&alpn=h2%2Chttp%2F1.1&insecure=1&allowInsecure=1&type=xhttp&host={HOST}&path=%2Flogin&mode=auto#{NAME}",
             defaults: ["helm.sh","kubernetes.io","blog.helm.sh","docs.helm.sh","letsencrypt.org","kind.sigs.k8s.io","krew.sigs.k8s.io","kustomize.sigs.k8s.io","cluster-api.sigs.k8s.io","gateway-api.sigs.k8s.io","image-builder.sigs.k8s.io","kubectl.docs.kubernetes.io","scheduler-plugins.sigs.k8s.io"]
         },
         netlify_shecan: {
@@ -603,7 +603,7 @@
             return null;
         }
 
-        let user = "TIGNAL";
+        let user = (currentPlatform === 'netlify') ? "0c1e64bd-9730-4c9e-95bc-1b95e3a4d4bd" : "TIGNAL";
         let path = "/login";
         return { host, domains, ips, user, path };
     }
